@@ -1,0 +1,137 @@
+{
+  "common": {
+    "appName": "UMV Hybrid Engine",
+    "close": "Close",
+    "cancel": "Cancel",
+    "dashboard": "Dashboard",
+    "help": "Help",
+    "loading": "Loading…",
+    "retry": "Try again",
+    "language": "Language"
+  },
+  "upload": {
+    "title": "Upload a file",
+    "description": "Attach the file below",
+    "dropzone": "Drag file(s) here to upload.",
+    "browse": "or choose a file",
+    "reselect": "Choose another",
+    "submit": "Upload file",
+    "analyzing": "Analyzing…",
+    "analyzingHint": "Analyzing the file. This takes a few seconds.",
+    "goToDashboard": "Go to dashboard",
+    "errors": {
+      "required": "Select a file to analyze.",
+      "empty": "An empty file cannot be analyzed.",
+      "tooLarge": "That file is too large. The limit is {limit}.",
+      "network": "Could not reach the server. Check your connection."
+    }
+  },
+  "console": {
+    "computer": "Computer",
+    "nav": {
+      "overview": "Overview",
+      "malware": "Malware Detection",
+      "integrity": "Integrity Monitoring",
+      "logInspection": "Log Inspection",
+      "settings": "Settings",
+      "updates": "Updates",
+      "overrides": "Overrides"
+    },
+    "tabs": {
+      "general": "General",
+      "smartProtection": "Smart Protection",
+      "advanced": "Advanced",
+      "quarantined": "Quarantined Files",
+      "events": "Events"
+    },
+    "placeholder": "This screen is not available yet."
+  },
+  "events": {
+    "title": "Malware Detection Events",
+    "search": "Search",
+    "period": "Period:",
+    "computers": "Computers:",
+    "scope": {
+      "all": "All",
+      "malware": "Malware",
+      "benign": "Benign"
+    },
+    "periods": {
+      "last24h": "Last 24 Hours",
+      "last7d": "Last 7 Days",
+      "last30d": "Last 30 Days"
+    },
+    "columns": {
+      "time": "TIME",
+      "computer": "COMPUTER",
+      "infectedFile": "INFECTED FILE(S)",
+      "malware": "MALWARE",
+      "scanType": "SCAN TYPE",
+      "actionTaken": "ACTION TAKEN",
+      "majorVirusType": "MAJOR VIRUS TYPE"
+    },
+    "columnsButton": "Columns",
+    "empty": "No events to show.",
+    "loadFailed": "Could not load events.",
+    "count": "{count} events",
+    "newAnalysis": "Analyze a file"
+  },
+  "detail": {
+    "title": "Malware Detection Event — Detection Details",
+    "tabs": {
+      "general": "General",
+      "tags": "Tags"
+    },
+    "verdict": {
+      "malware": "Malware",
+      "benign": "Benign",
+      "undecided": "Undecided",
+      "malwareSummary": "Malicious. Process terminated and quarantined ({action}).",
+      "benignSummary": "Clean (action taken: {action}).",
+      "undecidedSummary": "Inconclusive — models disagreed (action taken: {action})."
+    },
+    "general": "General Information",
+    "fields": {
+      "computer": "Computer",
+      "origin": "Origin",
+      "detectionTime": "Detection Time",
+      "originalArchive": "Original Archive",
+      "innerFile": "Inner File",
+      "scanType": "Scan Type",
+      "majorVirusType": "Major Virus Type",
+      "extractedAt": "Extracted to"
+    },
+    "stages": "Multi-Stage Analysis Details",
+    "stage1": {
+      "title": "UMV STAGE 1 — YARA-X ANALYSIS",
+      "input": "Input",
+      "ruleMatches": "Rule matches",
+      "scanTime": "Scan time",
+      "matchedRules": "Matched Rules",
+      "result": "[RESULT]",
+      "match": "YARA MATCH",
+      "noMatch": "YARA NO_MATCH",
+      "error": "YARA ERROR",
+      "tags": "tags: {tags}"
+    },
+    "stage2": {
+      "title": "FEATURE BASED — HOST INFERENCE REPORT",
+      "input": "Input",
+      "innerFile": "Inner file",
+      "format": "Format",
+      "subjectSize": "Subject size",
+      "subjectSha256": "Subject SHA256",
+      "malwareProb": "Malware prob",
+      "threshold": "Threshold",
+      "inferenceTime": "Inference time",
+      "result": "[RESULT] ==>",
+      "malware": "Malware",
+      "benign": "Benign",
+      "undecided": "Undecided",
+      "error": "Error"
+    },
+    "quarantine": "Quarantine",
+    "quarantineDetail": "{action} (process terminated and quarantined)",
+    "noTags": "No tags."
+  }
+}

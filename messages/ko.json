@@ -1,0 +1,137 @@
+{
+  "common": {
+    "appName": "UMV Hybrid Engine",
+    "close": "닫기",
+    "cancel": "취소",
+    "dashboard": "대시보드",
+    "help": "도움말",
+    "loading": "불러오는 중…",
+    "retry": "다시 시도",
+    "language": "언어"
+  },
+  "upload": {
+    "title": "Upload a file",
+    "description": "분석할 파일을 첨부하세요",
+    "dropzone": "파일을 이 곳에 끌어다 놓으세요.",
+    "browse": "또는 파일 선택",
+    "reselect": "다시 선택",
+    "submit": "Upload file",
+    "analyzing": "분석 중…",
+    "analyzingHint": "파일을 분석하고 있습니다. 잠시만 기다려 주세요.",
+    "goToDashboard": "대시보드로 이동",
+    "errors": {
+      "required": "분석할 파일을 선택해 주세요.",
+      "empty": "빈 파일은 분석할 수 없습니다.",
+      "tooLarge": "파일이 너무 큽니다. {limit} 이하만 업로드할 수 있습니다.",
+      "network": "서버에 연결하지 못했습니다. 네트워크 상태를 확인해 주세요."
+    }
+  },
+  "console": {
+    "computer": "Computer",
+    "nav": {
+      "overview": "Overview",
+      "malware": "Malware Detection",
+      "integrity": "Integrity Monitoring",
+      "logInspection": "Log Inspection",
+      "settings": "Settings",
+      "updates": "Updates",
+      "overrides": "Overrides"
+    },
+    "tabs": {
+      "general": "General",
+      "smartProtection": "Smart Protection",
+      "advanced": "Advanced",
+      "quarantined": "Quarantined Files",
+      "events": "Events"
+    },
+    "placeholder": "이 화면은 아직 준비 중입니다."
+  },
+  "events": {
+    "title": "Malware Detection Events",
+    "search": "검색",
+    "period": "Period:",
+    "computers": "Computers:",
+    "scope": {
+      "all": "All",
+      "malware": "Malware",
+      "benign": "Benign"
+    },
+    "periods": {
+      "last24h": "Last 24 Hours",
+      "last7d": "Last 7 Days",
+      "last30d": "Last 30 Days"
+    },
+    "columns": {
+      "time": "TIME",
+      "computer": "COMPUTER",
+      "infectedFile": "INFECTED FILE(S)",
+      "malware": "MALWARE",
+      "scanType": "SCAN TYPE",
+      "actionTaken": "ACTION TAKEN",
+      "majorVirusType": "MAJOR VIRUS TYPE"
+    },
+    "columnsButton": "Columns",
+    "empty": "표시할 이벤트가 없습니다.",
+    "loadFailed": "이벤트를 불러오지 못했습니다.",
+    "count": "{count}건",
+    "newAnalysis": "새 파일 분석"
+  },
+  "detail": {
+    "title": "Malware Detection Event — Detection Details",
+    "tabs": {
+      "general": "General",
+      "tags": "Tags"
+    },
+    "verdict": {
+      "malware": "Malware",
+      "benign": "Benign",
+      "undecided": "Undecided",
+      "malwareSummary": "악성 판정, 프로세스 강제 종료 및 격리 완료 ({action})",
+      "benignSummary": "정상 판정 (조치: {action})",
+      "undecidedSummary": "판정 보류 — 모델 간 결과가 갈렸습니다 (조치: {action})"
+    },
+    "general": "General Information",
+    "fields": {
+      "computer": "Computer",
+      "origin": "Origin",
+      "detectionTime": "Detection Time",
+      "originalArchive": "Original Archive",
+      "innerFile": "Inner File",
+      "scanType": "Scan Type",
+      "majorVirusType": "Major Virus Type",
+      "extractedAt": "추출 위치"
+    },
+    "stages": "Multi-Stage Analysis Details",
+    "stage1": {
+      "title": "UMV STAGE 1 — YARA-X ANALYSIS",
+      "input": "Input",
+      "ruleMatches": "Rule matches",
+      "scanTime": "Scan time",
+      "matchedRules": "Matched Rules",
+      "result": "[RESULT]",
+      "match": "YARA MATCH",
+      "noMatch": "YARA NO_MATCH",
+      "error": "YARA ERROR",
+      "tags": "tags: {tags}"
+    },
+    "stage2": {
+      "title": "FEATURE BASED — HOST INFERENCE REPORT",
+      "input": "Input",
+      "innerFile": "Inner file",
+      "format": "Format",
+      "subjectSize": "Subject size",
+      "subjectSha256": "Subject SHA256",
+      "malwareProb": "Malware prob",
+      "threshold": "Threshold",
+      "inferenceTime": "Inference time",
+      "result": "[RESULT] ==>",
+      "malware": "Malware (악성)",
+      "benign": "Benign (정상)",
+      "undecided": "Undecided (보류)",
+      "error": "Error"
+    },
+    "quarantine": "Quarantine",
+    "quarantineDetail": "{action} (프로세스 강제 종료 및 격리)",
+    "noTags": "등록된 태그가 없습니다."
+  }
+}

@@ -1,12 +1,39 @@
-# OS
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
 .DS_Store
 Thumbs.db
 desktop.ini
+*.pem
 
-# Editor
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# editor
 .vscode/
 .idea/
 
-# Logs / temp
-*.log
-tmp/
