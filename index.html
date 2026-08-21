@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UMV Hybrid Engine - Malware Detection Console</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== 메인 콘솔 ===================== -->
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar__title">
+        <span id="topShield"></span>
+        <span id="computerName">Computer:</span>
+      </div>
+      <button class="topbar__help"><span id="helpIcon"></span> Help</button>
+    </header>
+    <div class="accent-bar"></div>
+
+    <div class="shell">
+      <!-- 좌측 네비게이션 -->
+      <nav class="sidebar" id="sidebarNav"></nav>
+
+      <!-- 콘텐츠 -->
+      <div class="content">
+        <div class="tabs" id="tabBar"></div>
+
+        <!-- Events 패널 -->
+        <section class="panel" id="panel-events">
+          <div class="panel__head">
+            <h2 class="panel__title">Malware Detection Events</h2>
+            <select class="select select--sm" id="filterScope"></select>
+            <select class="select select--sm" id="filterGrouping"></select>
+            <div class="panel__head-right">
+              <div class="search">
+                <span id="iconSearch"></span>
+                <input type="text" id="searchInput" placeholder="Search" />
+                <span class="search__caret" id="iconSearchCaret"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="filters">
+            <label for="filterPeriod">Period:</label>
+            <select class="select select--wide" id="filterPeriod"></select>
+            <label for="filterComputers">Computers:</label>
+            <select class="select select--wide" id="filterComputers"></select>
+          </div>
+
+          <div class="toolbar">
+            <button class="btn"><span id="iconView"></span> View</button>
+            <button class="btn"><span id="iconExport"></span> Export <span class="js-caret"></span></button>
+            <button class="btn"><span id="iconTagging"></span> Auto-Tagging...</button>
+            <button class="btn"><span id="iconColumns"></span> Columns...</button>
+            <button class="btn" id="openUpload">Upload a file</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="grid">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>TIME ▼</th>
+                  <th>COMPUTER</th>
+                  <th>INFECTED FILE(S)</th>
+                  <th>MALWARE</th>
+                  <th>SCAN TYPE</th>
+                  <th>ACTION TAKEN</th>
+                  <th>MAJOR VIRUS TYPE</th>
+                </tr>
+              </thead>
+              <tbody id="eventRows"></tbody>
+            </table>
+          </div>
+
+          <div class="footer-actions">
+            <button class="btn">Get Events</button>
+            <button class="btn">Save</button>
+            <button class="btn">Close</button>
+          </div>
+        </section>
+
+        <!-- 나머지 메뉴/탭 자리표시자 -->
+        <section class="panel" id="panel-placeholder" hidden>
+          <p class="placeholder">이 화면은 아직 준비 중입니다. (프로토타입)</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== 탐지 상세 모달 ===================== -->
+  <div class="modal-backdrop" id="detailModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Malware Detection Event Detection Details">
+      <div class="modal__head">
+        <span id="detailShield"></span>
+        <span class="modal__head-title">Malware Detection Event — Detection Details</span>
+        <button class="modal__close" data-close-detail aria-label="닫기">&times;</button>
+      </div>
+      <div class="modal__accent"></div>
+
+      <div class="modal__tabs" id="detailTabs">
+        <button class="tab is-active" data-detail-tab="general">General</button>
+        <button class="tab" data-detail-tab="tags">Tags</button>
+      </div>
+
+      <div class="modal__body">
+        <div id="detailGeneral"></div>
+        <div id="detailTags" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== 파일 업로드 모달 ===================== -->
+  <div class="modal-backdrop" id="uploadModal" hidden>
+    <div class="upload-card" role="dialog" aria-modal="true" aria-label="Upload a file">
+      <div class="upload-card__icon" id="uploadIcon"></div>
+      <h2 class="upload-card__title">Upload a file</h2>
+      <p class="upload-card__desc">Attach the file below</p>
+
+      <div class="dropzone" id="dropzone"></div>
+      <input type="file" id="fileInput" multiple hidden />
+
+      <div class="upload-card__foot">
+        <button class="btn btn--ghost" id="uploadCancel">Cancel</button>
+        <button class="btn btn--primary" id="uploadSubmit">Upload file</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
