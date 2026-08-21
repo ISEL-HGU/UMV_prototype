@@ -234,8 +234,7 @@ function buildStage2(ev) {
       { label: 'Format',         value: ev.format },
       { label: 'Subject size',   value: `${ev.size.toLocaleString()} bytes` },
       { label: 'Subject SHA256', value: ev.sha256, mono: true },
-      { label: 'Feature set',    value: s2.featureSet },
-      { label: 'Model used',     value: s2.model },
+      /* Feature set / Model used 는 내부 구현 정보라 화면에 노출하지 않는다 */
       { label: 'Malware prob',   value: s2.prob.toFixed(6) },
       { label: 'Threshold',      value: s2.threshold.toFixed(2) },
       { label: 'Inference time', value: `${s2.inferenceSec} sec` },

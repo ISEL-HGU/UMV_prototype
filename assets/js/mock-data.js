@@ -61,7 +61,8 @@ const MOCK_EVENTS = [
       ],
     },
 
-    /* FEATURE BASED - HOST INFERENCE REPORT */
+    /* FEATURE BASED - HOST INFERENCE REPORT
+     * featureSet / model 은 내부 구현 정보라 화면에는 표시하지 않는다. */
     stage2: {
       status: 'MALWARE',
       featureSet: 'ember_v3_2568',

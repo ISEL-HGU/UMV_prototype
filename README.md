@@ -50,8 +50,10 @@ CLI 리포트 원문과 동일한 항목·순서로 표시합니다.
 - **Stage 1** `UMV STAGE 1 - YARA-X ANALYSIS`
   Input / Rule matches / Scan time / Matched Rules / [RESULT]
 - **Stage 2** `FEATURE BASED - HOST INFERENCE REPORT`
-  Input / Inner file / Format / Subject size / Subject SHA256 / Feature set /
-  Model used / Malware prob / Threshold / Inference time / [RESULT] ==>
+  Input / Inner file / Format / Subject size / Subject SHA256 /
+  Malware prob / Threshold / Inference time / [RESULT] ==>
+
+  `Feature set` / `Model used` 는 내부 구현 정보라 화면에 표시하지 않습니다.
 
 ## 구조
 
