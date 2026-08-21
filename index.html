@@ -54,7 +54,6 @@
             <button class="btn"><span id="iconExport"></span> Export <span class="js-caret"></span></button>
             <button class="btn"><span id="iconTagging"></span> Auto-Tagging...</button>
             <button class="btn"><span id="iconColumns"></span> Columns...</button>
-            <button class="btn" id="openUpload">Upload a file</button>
           </div>
 
           <div class="table-wrap">
@@ -108,23 +107,6 @@
       <div class="modal__body">
         <div id="detailGeneral"></div>
         <div id="detailTags" hidden></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== 파일 업로드 모달 ===================== -->
-  <div class="modal-backdrop" id="uploadModal" hidden>
-    <div class="upload-card" role="dialog" aria-modal="true" aria-label="Upload a file">
-      <div class="upload-card__icon" id="uploadIcon"></div>
-      <h2 class="upload-card__title">Upload a file</h2>
-      <p class="upload-card__desc">Attach the file below</p>
-
-      <div class="dropzone" id="dropzone"></div>
-      <input type="file" id="fileInput" multiple hidden />
-
-      <div class="upload-card__foot">
-        <button class="btn btn--ghost" id="uploadCancel">Cancel</button>
-        <button class="btn btn--primary" id="uploadSubmit">Upload file</button>
       </div>
     </div>
   </div>

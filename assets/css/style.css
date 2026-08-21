@@ -250,7 +250,16 @@ table.grid tbody tr.is-highlighted:hover { background: #cdefd2; }
 .tag--red   { color: var(--danger); border-color: #ef9a9a; background: #ffebee; }
 .tag--gray  { color: #555; border-color: #cfcfcf; background: #f3f3f3; }
 
-/* ---------- 업로드 모달 ---------- */
+/* ---------- 업로드 화면 (upload.html · 대시보드와 분리된 독립 페이지) ---------- */
+.upload-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  background: #f2f2f4;
+  overflow-y: auto;
+}
+
 .upload-card {
   background: #fff; width: 420px; max-width: 100%;
   border-radius: 16px; padding: 26px 26px 22px;

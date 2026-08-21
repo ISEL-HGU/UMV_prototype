@@ -338,88 +338,12 @@ function switchDetailTab(id) {
 function closeDetailModal() { $('#detailModal').hidden = true; }
 
 /* -------------------------------------------------------------
- * 5. 파일 업로드 모달
- * ----------------------------------------------------------- */
-let selectedFiles = [];
-
-function renderDropzone() {
-  const zone = $('#dropzone');
-  if (!selectedFiles.length) {
-    zone.innerHTML = `
-      <span class="dropzone__icon">${icon('fileUp')}</span>
-      <span class="dropzone__label">Drag file(s) here to upload.</span>
-      <button type="button" class="dropzone__browse" id="browseBtn">또는 파일 선택</button>
-    `;
-  } else {
-    zone.innerHTML = `
-      <span class="dropzone__icon">${icon('fileUp')}</span>
-      <div>
-        ${selectedFiles.map((f) => `
-          <div class="dropzone__file">${esc(f.name)}</div>
-          <div class="dropzone__hint">${(f.size / 1024).toFixed(1)} KB</div>
-        `).join('')}
-      </div>
-      <button type="button" class="dropzone__browse" id="browseBtn">다시 선택</button>
-    `;
-  }
-}
-
-function openUploadModal() {
-  selectedFiles = [];
-  renderDropzone();
-  $('#uploadModal').hidden = false;
-}
-
-function closeUploadModal() { $('#uploadModal').hidden = true; }
-
-function initUpload() {
-  $('#uploadIcon').innerHTML = icon('folder');
-  const zone = $('#dropzone');
-  const input = $('#fileInput');
-
-  ['dragenter', 'dragover'].forEach((type) => {
-    zone.addEventListener(type, (e) => { e.preventDefault(); zone.classList.add('is-over'); });
-  });
-  ['dragleave', 'drop'].forEach((type) => {
-    zone.addEventListener(type, (e) => { e.preventDefault(); zone.classList.remove('is-over'); });
-  });
-
-  zone.addEventListener('drop', (e) => {
-    selectedFiles = Array.from(e.dataTransfer.files);
-    renderDropzone();
-  });
-
-  zone.addEventListener('click', (e) => {
-    if (e.target.closest('#browseBtn')) input.click();
-  });
-
-  input.addEventListener('change', () => {
-    selectedFiles = Array.from(input.files);
-    renderDropzone();
-    input.value = '';
-  });
-
-  $('#uploadCancel').addEventListener('click', closeUploadModal);
-
-  /* 백엔드 연동 전: 업로드 대신 첫 번째 이벤트 상세를 띄워 흐름만 확인 */
-  $('#uploadSubmit').addEventListener('click', () => {
-    if (!selectedFiles.length) {
-      alert('업로드할 파일을 먼저 선택하세요.');
-      return;
-    }
-    closeUploadModal();
-    renderDetailModal(MOCK_EVENTS[0]);
-  });
-}
-
-/* -------------------------------------------------------------
- * 6. 초기화
+ * 5. 초기화
  * ----------------------------------------------------------- */
 function init() {
   renderShell();
   renderFilters();
   refreshTable();
-  initUpload();
 
   /* 목록 행 클릭 → 상세 모달 */
   $('#eventRows').addEventListener('click', (e) => {
@@ -439,17 +363,9 @@ function init() {
     if (tab) switchDetailTab(tab.dataset.detailTab);
   });
 
-  /* 업로드 모달 열기 */
-  $('#openUpload').addEventListener('click', openUploadModal);
-  $('#uploadModal').addEventListener('click', (e) => {
-    if (e.target.id === 'uploadModal') closeUploadModal();
-  });
-
   /* ESC 로 모달 닫기 */
   document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape') return;
-    closeDetailModal();
-    closeUploadModal();
+    if (e.key === 'Escape') closeDetailModal();
   });
 }
 
