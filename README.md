@@ -69,3 +69,10 @@ assets/js/upload.js     업로드 화면 로직
 
 데이터를 바꾸려면 [`assets/js/mock-data.js`](assets/js/mock-data.js) 의
 `MOCK_EVENTS` 만 수정하면 목록과 상세 모달에 함께 반영됩니다.
+
+## 문서
+
+| 문서 | 내용 |
+|---|---|
+| [docs/API.md](docs/API.md) | 프론트엔드 ↔ 백엔드 API 명세 (DB 없는 MVP 기준) |
+| [docs/BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md) | 백엔드 구현 가이드 — 웹 서버를 처음 만드는 경우 |
