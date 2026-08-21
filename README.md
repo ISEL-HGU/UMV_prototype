@@ -13,12 +13,12 @@ UMV Hybrid Engine 악성코드 탐지 결과를 보여주는 관리 콘솔 UI �
 
 | 페이지 | 화면 | 설명 |
 |---|---|---|
-| `upload.html` | Upload a file | 파일 드래그&드롭 업로드 (단독 화면) |
-| `index.html` | Malware Detection Events | 탐지 이벤트 목록. 검색 / All·Malware·Benign 필터 |
-| `index.html` | Detection Details | 행 클릭 시 상세 모달. General / Tags 탭 |
+| `index.html` | Upload a file | **진입 화면.** 파일 드래그&드롭 업로드 |
+| `dashboard.html` | Malware Detection Events | 탐지 이벤트 목록. 검색 / All·Malware·Benign 필터 |
+| `dashboard.html` | Detection Details | 행 클릭 시 상세 모달. General / Tags 탭 |
 
-`upload.html` 에서 **Upload file** 을 누르면 (백엔드가 없으므로) 분석 완료를
-가정하고 `index.html` 대시보드로 이동합니다.
+업로드 화면에서 **Upload file** 을 누르면 (백엔드가 없으므로) 분석 완료를
+가정하고 `dashboard.html` 로 이동합니다.
 
 ## 이벤트 목록 컬럼
 
@@ -56,8 +56,8 @@ CLI 리포트 원문과 동일한 항목·순서로 표시합니다.
 ## 구조
 
 ```
-index.html              대시보드 — 콘솔 셸 + 탐지 상세 모달
-upload.html             업로드 화면 — 대시보드와 분리된 독립 페이지
+index.html              업로드 화면 — 진입 페이지
+dashboard.html          대시보드 — 콘솔 셸 + 탐지 상세 모달
 assets/css/style.css    전체 스타일 (색상은 :root 변수)
 assets/js/mock-data.js  데모 데이터 — 값 수정은 이 파일만
 assets/js/icons.js      인라인 SVG 아이콘 (외부 CDN 없음)

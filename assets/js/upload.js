@@ -1,6 +1,6 @@
 /* =============================================================
  * UMV Prototype - Upload Page
- * 대시보드(index.html)와 분리된 독립 화면. 백엔드 연동 없음.
+ * 진입 화면. 대시보드(dashboard.html)와 분리된 독립 페이지. 백엔드 연동 없음.
  * ============================================================= */
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -79,7 +79,7 @@ function init() {
       alert('업로드할 파일을 먼저 선택하세요.');
       return;
     }
-    window.location.href = 'index.html';
+    window.location.href = 'dashboard.html';
   });
 }
 
