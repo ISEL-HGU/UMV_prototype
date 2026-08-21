@@ -29,7 +29,8 @@ http://localhost:3000 에서 업로드 화면이 뜬다.
 | 명령 | 설명 |
 |---|---|
 | `npm run dev` | 개발 서버 |
-| `npm run build` | 프로덕션 빌드 (`output: standalone`) |
+| `npm run build` | 프로덕션 빌드 |
+| `BUILD_STANDALONE=true npm run build` | 온프레미스용 standalone 빌드 (`.next/standalone`) |
 | `npm start` | 빌드 결과 실행 |
 | `npx tsc --noEmit` | 타입 검사 |
 | `npx eslint src` | 린트 |
