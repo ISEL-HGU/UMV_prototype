@@ -84,6 +84,16 @@ export async function fetchEvents(limit = 50): Promise<EventsResponse> {
   return EventsResponseSchema.parse(await response.json());
 }
 
+/** 이벤트 한 건 삭제. 본문이 없으므로 반환값도 없다. */
+export async function deleteEvent(analysisId: string): Promise<void> {
+  const response = await fetch(
+    `${API_BASE}/api/v1/events/${encodeURIComponent(analysisId)}`,
+    { method: "DELETE" },
+  );
+
+  if (!response.ok) throw await toApiError(response);
+}
+
 export async function fetchHealth(): Promise<Health> {
   const response = await fetch(`${API_BASE}/api/v1/health`);
   if (!response.ok) throw await toApiError(response);

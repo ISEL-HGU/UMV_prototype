@@ -78,6 +78,9 @@
   },
   "detail": {
     "title": "Malware Detection Event — Detection Details",
+    "delete": "삭제",
+    "deleting": "삭제 중…",
+    "deleteFailed": "삭제하지 못했습니다. 잠시 후 다시 시도해 주세요.",
     "tabs": {
       "general": "General",
       "tags": "Tags"

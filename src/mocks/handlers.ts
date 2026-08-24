@@ -59,6 +59,18 @@ export const handlers = [
     });
   }),
 
+  http.delete("*/api/v1/events/:analysisId", ({ params }) => {
+    const { analysisId } = params;
+    const index = store.findIndex((a) => a.analysis_id === analysisId);
+
+    if (index === -1) {
+      return apiError(404, "EVENT_NOT_FOUND", "이미 삭제된 이벤트입니다.");
+    }
+
+    store.splice(index, 1);
+    return new HttpResponse(null, { status: 204 });
+  }),
+
   http.post("*/api/v1/analyze", async ({ request }) => {
     const form = await request.formData();
     const entries = form.getAll("file");

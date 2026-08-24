@@ -1,9 +1,13 @@
 "use client";
 
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Bug, ShieldCheck, TriangleAlert } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ApiError, deleteEvent } from "@/lib/api";
 import {
   Dialog,
   DialogContent,
@@ -60,6 +64,20 @@ export function DetectionDialog({
 }) {
   const t = useTranslations("detail");
   const locale = useLocale();
+  const queryClient = useQueryClient();
+
+  const removal = useMutation({
+    mutationFn: deleteEvent,
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: ["events"] });
+      onOpenChange(false);
+    },
+    onError: (error) => {
+      toast.error(
+        error instanceof ApiError ? error.message : t("deleteFailed"),
+      );
+    },
+  });
 
   if (!analysis) return null;
 
@@ -84,8 +102,19 @@ export function DetectionDialog({
   return (
     <Dialog open={!!analysis} onOpenChange={onOpenChange}>
       <DialogContent className="max-h-[90dvh] gap-0 overflow-y-auto sm:max-w-2xl">
+        {/* 닫기(X) 버튼 왼쪽에 놓는다 */}
+        <Button
+          variant="link"
+          size="sm"
+          disabled={removal.isPending}
+          onClick={() => removal.mutate(analysis.analysis_id)}
+          className="text-destructive absolute top-2 right-10 h-8 px-2"
+        >
+          {removal.isPending ? t("deleting") : t("delete")}
+        </Button>
+
         <DialogHeader>
-          <DialogTitle>{t("title")}</DialogTitle>
+          <DialogTitle className="pr-28">{t("title")}</DialogTitle>
           <DialogDescription className="sr-only">
             {verdictSummary}
           </DialogDescription>

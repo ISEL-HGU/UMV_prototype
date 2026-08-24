@@ -78,6 +78,9 @@
   },
   "detail": {
     "title": "Malware Detection Event — Detection Details",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "deleteFailed": "Could not delete this event. Try again in a moment.",
     "tabs": {
       "general": "General",
       "tags": "Tags"
