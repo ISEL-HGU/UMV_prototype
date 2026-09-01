@@ -8,10 +8,10 @@ import {
   Monitor,
   Search,
   Settings,
-  Shield,
   Shuffle,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useState, useTransition, type ComponentType } from "react";
 
 import { LocaleSwitch } from "@/components/console/locale-switch";
@@ -75,7 +75,13 @@ export function ConsoleShell({
     <div className="flex h-dvh flex-col">
       <header className="bg-console-bar text-console-bar-foreground flex items-center justify-between px-5 py-2.5">
         <div className="flex items-center gap-2 text-sm font-semibold">
-          <Shield className="text-console-accent size-4" aria-hidden />
+          <Image
+            src="/umv_zyon_logo.png"
+            alt=""
+            width={16}
+            height={16}
+            className="size-4 shrink-0"
+          />
           <span>
             {t("computer")}: {computerName}
           </span>
